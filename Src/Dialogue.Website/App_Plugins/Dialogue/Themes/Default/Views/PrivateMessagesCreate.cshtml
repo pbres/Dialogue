@@ -20,8 +20,9 @@
     @Html.AntiForgeryToken()
 
     <div class="form-group">
+        @Html.HiddenFor(m => m.CreatePrivateMessageViewModel.UserId)
         @Html.LabelFor(m => m.CreatePrivateMessageViewModel.UserToUsername)
-        @Html.TextBoxFor(m => m.CreatePrivateMessageViewModel.UserToUsername, new { @class = "form-control usertotextbox", @readonly = "readonly" })
+        @Html.TextBoxFor(m => m.CreatePrivateMessageViewModel.UserToUsername, new {@class = "form-control usertotextbox", @readonly = "readonly"})
         @Html.ValidationMessageFor(m => m.CreatePrivateMessageViewModel.UserToUsername)
     </div>
 
