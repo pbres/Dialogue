@@ -24,10 +24,10 @@ namespace Dialogue.Logic.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var userTo = createPrivateMessageViewModel.UserToUsername;
+                    var userTo = createPrivateMessageViewModel.UserId;
 
                     // first check they are not trying to message themself!
-                    if (!string.Equals(userTo, CurrentMember.UserName, StringComparison.CurrentCultureIgnoreCase))
+                    if (!int.Equals(userTo, CurrentMember.Id))
                     {
                         // Map the view model to message
                         var privateMessage = new PrivateMessage

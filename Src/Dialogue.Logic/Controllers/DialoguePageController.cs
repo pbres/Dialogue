@@ -541,6 +541,7 @@ namespace Dialogue.Logic.Controllers
             {
                 var userTo = ServiceFactory.MemberService.Get(Convert.ToInt32(to));
                 viewModel.CreatePrivateMessageViewModel.UserToUsername = userTo.UserName;
+                viewModel.CreatePrivateMessageViewModel.UserId = userTo.Id;
             }
 
             // See if this is a reply or not
@@ -549,6 +550,7 @@ namespace Dialogue.Logic.Controllers
                 var previousMessage = ServiceFactory.PrivateMessageService.Get(new Guid(id));
                 // Its a reply, get the details
                 viewModel.CreatePrivateMessageViewModel.UserToUsername = previousMessage.MemberFrom.UserName;
+                viewModel.CreatePrivateMessageViewModel.UserId = previousMessage.MemberFrom.Id;
                 viewModel.CreatePrivateMessageViewModel.Subject = previousMessage.Subject;
                 viewModel.CreatePrivateMessageViewModel.PreviousMessage = previousMessage.Message;
             }

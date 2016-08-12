@@ -54,6 +54,8 @@ namespace Dialogue.Logic.Models.ViewModels
 
         public string PreviousMessage { get; set; }
 
+        public int UserId { get; set; }
+
     }
 
     public class ViewPrivateMessageViewModel : MasterModel
